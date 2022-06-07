@@ -1,0 +1,72 @@
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    margin-top: 20px;
+    grid-row-gap: 2rem;
+    grid-column-gap: 3rem;
+.news-container {
+    position: relative;
+    height: 302px;
+    box-shadow: 0 4px 4px rgba(165, 165, 165, 0.15);
+    padding: 1.5rem 1rem;
+    background: white;
+    @media screen and (max-width: 500px) {
+    
+            width: 350px;
+    
+        }
+
+    h3 {
+        margin: 1rem 0;
+        font-weight: 400;
+        font-size: 18px;
+        color: #000
+
+    }
+
+    p {
+        font-size: 14px;
+        color: #747373;
+        margin-top: 1rem;
+    }
+
+    .line {
+        height: 2px;
+        width: 100%;
+        background: #C4C4C4;
+        ;
+    }
+
+    .end {
+        display: flex;
+        position: absolute;
+        bottom: 30px;
+        margin-top: 1rem;
+        gap: 1rem;
+
+
+        a {
+            font-size: 12px;
+            margin-top: 1rem;
+        }
+
+        .bookmark {
+            display: flex;
+
+            .star {
+                margin-top: .9rem;
+                color: #C4C4C4;
+            }
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+
+    }
+}
+       
+}
+ 
