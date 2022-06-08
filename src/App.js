@@ -7,7 +7,7 @@ function App () {
 
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [newsPerPage, setNewsPerPage] = useState(6);
+  const newsPerPage = 6;
   useEffect(() => {
     async function fetchNews () {
       const data = await fetch('https://newsapi.org/v2/everything?q=Apple&from=2022-06-07&sortBy=popularity&apiKey=052597d1b993423bae46346b524fe5d5')
@@ -20,7 +20,10 @@ function App () {
   }, [])
   const indexOfLastNews = currentPage * newsPerPage;
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
-  const currentNews= news.slice(indexOfFirstNews, indexOfLastNews)
+  const currentNews = news.slice(indexOfFirstNews, indexOfLastNews)
+ //To change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="container">
       <div className="header">
@@ -34,9 +37,9 @@ function App () {
           return <News key={ item.title } item={ item } />
           
         }) }
-          <Pagination newsPerPage={newsPerPage } totalNews={news.length}/>
+          
         </div>
-      
+      <Pagination newsPerPage={newsPerPage } totalNews={news.length} paginate={paginate} currentPage={currentPage}/>
       </div>
         
     </div>

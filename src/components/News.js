@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './News.scss';
 import { MdOutlineStarBorderPurple500 } from 'react-icons/md';
+import Bookmark from 'react-bookmark';
 
-function News({item}) {
+function News ({ item }) {
+    const [active, setActive] = useState(false);
+    const handleClick = () => {
+        setActive(!active);
+        <Bookmark className="coolClass" href={item.url} title={item.title} />
+
+    }
+    let date = new Date(item.publishedAt)
+    let timeNow = new Date();
+    let hourDiff = Math.floor((timeNow - date) / 3600000);
+    let minDiff = Math.floor((timeNow - date)/60000);
+   
+    console.log(minDiff);
     return (
 
       <div className="news-container">
@@ -10,9 +23,9 @@ function News({item}) {
           <div className="line"></div>
           <p>{item.description}</p>
           <div className="end">
-              <a href={item.url}>Read full story</a>
-              <div className="bookmark"><MdOutlineStarBorderPurple500 className="star"/><p>Add to bookmarks</p></div>
-              <p>5 mins ago</p>
+                <a href={ item.url }>Read full story</a>
+                <div className="bookmark" onClick={ handleClick }><MdOutlineStarBorderPurple500 className={ `star ${active? "active" : ""}` }/><p>Add to bookmarks</p></div>
+                <p> { hourDiff< 1? `${minDiff} mins`: `${hourDiff} hours`  } ago</p>
 </div>
             </div>
     

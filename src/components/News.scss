@@ -53,10 +53,16 @@
 
         .bookmark {
             display: flex;
+            cursor: pointer;
+            transition: all 5s ease;
 
             .star {
                 margin-top: .9rem;
                 color: #C4C4C4;
+                
+            }
+            .active{
+                color: rgb(194, 141, 26);
             }
         }
 

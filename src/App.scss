@@ -3,9 +3,13 @@
     min-height: 100vh;
     position: relative;
     background: #F5F5F5;
+   
 @media screen and (max-width:500px) {
         width: 130%;
     }
+          @media screen and (width:280px) {
+              width: 190%;
+          }
 }
 
 

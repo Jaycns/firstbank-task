@@ -1,6 +1,45 @@
 .pagination{
-    position: absolute;
-    top: 5rem;
-    display: block;
-    z-index: 4;
+   width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    gap: .8rem;
+    justify-content: flex-end;
+    
+    .page{
+        display: flex;
+        justify-content: stretch;
+        .normal{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            cursor: pointer;
+            color: #7D7D81;
+            background: #E5E5E5;
+            font-size: 14px;
+            font-weight: 400;
+            width: 24px;
+            height: 24px;
+            border-radius: 3px;
+            
+        }
+
+    }
+    .normal.active {
+    
+                background: #03009E;
+                color: #fff;
+            
+    }
+.next{
+    font-size: 10px;
+    letter-spacing: .1px;
+    font-weight: 500;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+}
+.next.active{
+    color: #C4C4C4;
+}
 }
