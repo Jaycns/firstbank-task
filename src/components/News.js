@@ -13,9 +13,10 @@ function News ({ item }) {
     let date = new Date(item.publishedAt)
     let timeNow = new Date();
     let hourDiff = Math.floor((timeNow - date) / 3600000);
-    let minDiff = Math.floor((timeNow - date)/60000);
+    let minDiff = Math.floor((timeNow - date) / 60000);
+    let dayDiff = Math.floor((timeNow - date) / (3600000*24));
    
-    console.log(minDiff);
+    console.log(date);
     return (
 
       <div className="news-container">
@@ -25,7 +26,7 @@ function News ({ item }) {
           <div className="end">
                 <a href={ item.url }>Read full story</a>
                 <div className="bookmark" onClick={ handleClick }><MdOutlineStarBorderPurple500 className={ `star ${active? "active" : ""}` }/><p>Add to bookmarks</p></div>
-                <p> { hourDiff< 1? `${minDiff} mins`: `${hourDiff} hours`  } ago</p>
+                <p> { dayDiff <1 ? hourDiff< 1? `${minDiff} mins`: `${hourDiff} hours`: `${dayDiff} ${dayDiff>1? "days": "day"}`} ago</p>
 </div>
             </div>
     
